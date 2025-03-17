@@ -53,7 +53,7 @@ const Cart = () => {
             <img src={item.image} alt={item.title} />
             <div className="item-details">
               <h3>{item.title}</h3>
-              <p className="item-price">${(item.price * item.quantity).toFixed(2)}</p>
+              <p className="item-price">₹{(item.price * item.quantity).toFixed(2)}</p>
               <div className="quantity-controls">
                 <button onClick={() => handleQuantityChange(item, item.quantity - 1)}>-</button>
                 <span>{item.quantity}</span>
@@ -67,15 +67,15 @@ const Cart = () => {
       <div className="cart-summary">
         <div className="summary-row">
           <span>Subtotal:</span>
-          <span>${subtotal.toFixed(2)}</span>
+          <span>₹{subtotal.toFixed(2)}</span>
         </div>
         <div className="summary-row">
           <span>GST (5%):</span>
-          <span>${gst.toFixed(2)}</span>
+          <span>₹{gst.toFixed(2)}</span>
         </div>
         <div className="summary-row total">
           <span>Total:</span>
-          <span>${total.toFixed(2)}</span>
+          <span>₹{total.toFixed(2)}</span>
         </div>
         <button className="checkout-button" onClick={handleCheckout}>
           Proceed to Checkout
